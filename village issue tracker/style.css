@@ -1,0 +1,133 @@
+:root {
+  --primary: #2e7d32;
+  --secondary: #1565c0;
+  --bg: #f5f7fa;
+  --text: #333;
+  --white: #ffffff;
+  --shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--white);
+  padding: 30px 20px;
+  text-align: center;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+}
+
+.card {
+  background: var(--white);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+
+h2 { margin-bottom: 15px; color: var(--primary); }
+
+form { display: flex; flex-direction: column; gap: 15px; }
+
+input, select, textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+button:hover { opacity: 0.9; }
+
+button.secondary { background-color: var(--secondary); }
+
+.issue-list { display: flex; flex-direction: column; gap: 15px; }
+
+.issue-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  border-left: 5px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.issue-card.Pending { border-left-color: #ff9800; }
+.issue-card.In-Progress { border-left-color: #2196f3; }
+.issue-card.Resolved { border-left-color: #4caf50; }
+
+.status-badge {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  background: #eee;
+  font-weight: bold;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  background: none;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 8px 16px;
+}
+
+.tab-btn.active {
+  background: var(--primary);
+  color: white;
+}
+
+/* Modal */
+#modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+#modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+}
